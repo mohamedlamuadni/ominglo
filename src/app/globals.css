@@ -1334,3 +1334,64 @@ html body .um-video-page .um-message-input {
     min-width: 0 !important;
   }
 }
+
+html body .um-video-page.um-mobile-touch .um-local-video-settings,
+html body .um-video-page.um-mobile-touch .um-video-pane.local:hover .um-local-video-settings,
+html body .um-video-page.um-mobile-touch .um-video-pane.local:not(:hover) .um-local-video-settings {
+  display: none !important;
+  pointer-events: none !important;
+}
+
+html body .um-video-page.um-mobile-touch .um-video-pane.local {
+  cursor: default !important;
+  -webkit-tap-highlight-color: transparent;
+}
+
+html body .um-video-page.um-mobile-touch .um-bottom-bar-mobile-touch {
+  gap: 8px !important;
+}
+
+html body .um-video-page.um-mobile-touch .um-stop-button,
+html body .um-video-page .um-stop-button-mobile-touch {
+  display: flex !important;
+  width: 70px !important;
+  min-width: 70px !important;
+  align-items: center !important;
+  justify-content: center !important;
+  border-radius: 8px !important;
+  font-size: 18px !important;
+  font-weight: 700 !important;
+}
+
+html body .um-video-page.um-mobile-touch .um-input-box {
+  min-width: 0 !important;
+}
+
+@media (max-width: 600px) {
+  html body .um-video-page .um-local-video-settings,
+  html body .um-video-page .um-video-pane.local:hover .um-local-video-settings,
+  html body .um-video-page .um-video-pane.local:not(:hover) .um-local-video-settings {
+    display: none !important;
+    pointer-events: none !important;
+  }
+
+  html body .um-video-page .um-stop-button,
+  html body .um-video-page .um-stop-button-mobile-touch {
+    display: flex !important;
+    width: 70px !important;
+    min-width: 70px !important;
+    align-items: center !important;
+    justify-content: center !important;
+    border-radius: 8px !important;
+    font-size: 18px !important;
+    font-weight: 700 !important;
+  }
+
+  html body .um-video-page .um-bottom-bar {
+    gap: 8px !important;
+  }
+
+  html body .um-video-page .um-input-box {
+    min-width: 0 !important;
+  }
+}

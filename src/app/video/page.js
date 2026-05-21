@@ -32,9 +32,29 @@ function setDocumentDarkMode(enabled) {
   document.documentElement.classList.toggle("dark", enabled);
 }
 
+function isNormalMobileTouchMode() {
+  if (typeof window === "undefined") return false;
+
+  const nav = window.navigator;
+  const viewportWidth = Math.min(
+    window.innerWidth || Number.POSITIVE_INFINITY,
+    document.documentElement?.clientWidth || Number.POSITIVE_INFINITY
+  );
+  const smallMobileViewport =
+    viewportWidth <= 600 || window.matchMedia?.("(max-width: 600px)")?.matches;
+  const touchCapable =
+    (nav?.maxTouchPoints || 0) > 0 ||
+    "ontouchstart" in window ||
+    window.matchMedia?.("(pointer: coarse)")?.matches;
+  const mobileUserAgent = /Android|iPhone|iPod|IEMobile|Mobile/i.test(nav?.userAgent || "");
+
+  return smallMobileViewport && (touchCapable || mobileUserAgent);
+}
+
 export default function VideoPage() {
   const [darkMode, setDarkMode] = useState(false);
   const [themeReady, setThemeReady] = useState(false);
+  const [isMobileTouchMode, setIsMobileTouchMode] = useState(false);
   const [chatState, setChatState] = useState("start");
   const [searchPhase, setSearchPhase] = useState("idle");
   const [showWelcome, setShowWelcome] = useState(true);
@@ -73,6 +93,40 @@ export default function VideoPage() {
     saveDarkModePreference(darkMode);
     setDocumentDarkMode(darkMode);
   }, [darkMode, themeReady]);
+
+  useEffect(() => {
+    let mobileModeTimer;
+
+    const updateMobileMode = () => {
+      window.clearTimeout(mobileModeTimer);
+      mobileModeTimer = window.setTimeout(() => {
+        setIsMobileTouchMode(isNormalMobileTouchMode());
+      }, 0);
+    };
+    const mediaQueries = [
+      window.matchMedia("(max-width: 600px)"),
+      window.matchMedia("(pointer: coarse)"),
+      window.matchMedia("(hover: none)"),
+    ];
+
+    updateMobileMode();
+    window.addEventListener("resize", updateMobileMode);
+    window.addEventListener("orientationchange", updateMobileMode);
+    mediaQueries.forEach((query) => {
+      query.addEventListener?.("change", updateMobileMode);
+      query.addListener?.(updateMobileMode);
+    });
+
+    return () => {
+      window.clearTimeout(mobileModeTimer);
+      window.removeEventListener("resize", updateMobileMode);
+      window.removeEventListener("orientationchange", updateMobileMode);
+      mediaQueries.forEach((query) => {
+        query.removeEventListener?.("change", updateMobileMode);
+        query.removeListener?.(updateMobileMode);
+      });
+    };
+  }, []);
 
   const refreshMediaDevices = useCallback(async () => {
     if (!navigator.mediaDevices?.enumerateDevices) return;
@@ -259,7 +313,7 @@ export default function VideoPage() {
 
   return (
     <main
-      className={`um-video-page ${
+      className={`um-video-page ${isMobileTouchMode ? "um-mobile-touch" : ""} ${
         renderedDarkMode ? "bg-black text-white" : "bg-[#f8f8f8] text-black"
       }`}
     >
@@ -279,6 +333,7 @@ export default function VideoPage() {
             <VideoPane kind="remote" isLoading={isSearching && !isConnected} videoRef={remoteVideoRef} />
             <VideoPane
               audioDevices={audioDevices}
+              disableMediaControls={isMobileTouchMode}
               isMirrored={isLocalVideoMirrored}
               kind="local"
               onAudioDeviceChange={handleAudioDeviceChange}
@@ -309,6 +364,7 @@ export default function VideoPage() {
               inputValue={inputValue}
               isConnected={isConnected}
               isSearching={isSearching}
+              isMobileTouchMode={isMobileTouchMode}
               onInputChange={setInputValue}
               onMainButton={handleMainButton}
               onSend={sendMessage}
@@ -362,6 +418,7 @@ function Header({ darkMode, onToggleDark }) {
 
 function VideoPane({
   audioDevices = [],
+  disableMediaControls = false,
   isLoading = false,
   isMirrored = false,
   kind,
@@ -374,12 +431,23 @@ function VideoPane({
   videoRef,
 }) {
   const isRemote = kind === "remote";
+  const shouldRenderLocalControls = !isRemote && !disableMediaControls;
+
+  function blockMobilePickerEvent(event) {
+    if (isRemote || !disableMediaControls) return;
+
+    event.preventDefault();
+    event.stopPropagation();
+  }
 
   return (
     <div
       className={`um-video-pane ${kind} ${
         isRemote ? "bg-[#4b4b4b]" : "bg-black"
       }`}
+      onClick={blockMobilePickerEvent}
+      onPointerDown={blockMobilePickerEvent}
+      onTouchStart={blockMobilePickerEvent}
     >
       <video
         ref={videoRef}
@@ -404,7 +472,7 @@ function VideoPane({
             <Flag size={34} strokeWidth={2.4} />
           </button>
         </>
-      ) : (
+      ) : shouldRenderLocalControls ? (
         <>
           <div className="um-local-video-settings">
             <div className="um-inner-video-settings">
@@ -457,7 +525,7 @@ function VideoPane({
           </div>
 
         </>
-      )}
+      ) : null}
     </div>
   );
 }
@@ -533,13 +601,14 @@ function BottomBar({
   inputValue,
   isConnected,
   isSearching,
+  isMobileTouchMode = false,
   onInputChange,
   onMainButton,
   onSend,
   onStop,
 }) {
   return (
-    <div className="um-bottom-bar">
+    <div className={`um-bottom-bar ${isMobileTouchMode ? "um-bottom-bar-mobile-touch" : ""}`}>
       <button
         type="button"
         onClick={onMainButton}
@@ -557,7 +626,7 @@ function BottomBar({
         <button
           type="button"
           onClick={onStop}
-          className={`um-stop-button ${
+          className={`um-stop-button ${isMobileTouchMode ? "um-stop-button-mobile-touch" : ""} ${
             darkMode ? "border-[#222] bg-[#080808]" : "border-[#d8d8d8] bg-white"
           }`}
         >
