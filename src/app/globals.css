@@ -1305,3 +1305,32 @@ html body .um-video-page .um-message-input {
   white-space: pre-wrap !important;
   overflow-wrap: anywhere !important;
 }
+
+/* Mobile touch mode only: keep desktop hover/device controls unchanged. */
+@media (max-width: 600px) and (hover: none) and (pointer: coarse) {
+  html body .um-video-page .um-local-video-settings,
+  html body .um-video-page .um-video-pane.local:hover .um-local-video-settings,
+  html body .um-video-page .um-video-pane.local:not(:hover) .um-local-video-settings {
+    display: none !important;
+    pointer-events: none !important;
+  }
+
+  html body .um-video-page .um-stop-button {
+    display: flex !important;
+    width: 70px !important;
+    min-width: 70px !important;
+    align-items: center !important;
+    justify-content: center !important;
+    border-radius: 8px !important;
+    font-size: 18px !important;
+    font-weight: 700 !important;
+  }
+
+  html body .um-video-page .um-bottom-bar {
+    gap: 8px !important;
+  }
+
+  html body .um-video-page .um-input-box {
+    min-width: 0 !important;
+  }
+}
