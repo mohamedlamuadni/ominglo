@@ -2182,3 +2182,77 @@ html body .um-video-page .um-chat-panel .um-age-warning span::after {
     font-size: 1.65dvh !important;
   }
 }
+
+/* Keep borders, outlines, and soft shadows visually hairline-thin in desktop zoom mode. */
+@media (hover: hover) and (pointer: fine) and (max-width: 1200px) {
+  html body .um-video-page {
+    --um-zoom-hairline: 0.12dvh;
+    --um-zoom-shadow-y: 0.12dvh;
+    --um-zoom-shadow-blur: 0.36dvh;
+    --um-zoom-scrollbar: 1.6dvh;
+    --um-zoom-scrollbar-pad: 0.4dvh;
+  }
+
+  html body .um-video-page .um-chat-panel,
+  html body .um-video-page .um-input-box,
+  html body .um-video-page .um-stop-button,
+  html body .um-video-page .um-stop-button-mobile-touch {
+    border-width: var(--um-zoom-hairline) !important;
+    outline-width: 0 !important;
+    box-shadow:
+      0 var(--um-zoom-shadow-y) var(--um-zoom-shadow-blur) rgba(0, 0, 0, 0.08) !important;
+  }
+
+  html body .um-video-page .um-start-button {
+    outline-width: 0 !important;
+    box-shadow:
+      0 var(--um-zoom-shadow-y) var(--um-zoom-shadow-blur) rgba(0, 0, 0, 0.08) !important;
+  }
+
+  html.dark body .um-video-page .um-start-button:not(.um-start-button-skip):not(.um-start-button-confirm) {
+    border-width: var(--um-zoom-hairline) !important;
+    box-shadow:
+      inset 0 0 0 var(--um-zoom-hairline) rgba(255, 255, 255, 0.025),
+      0 0 1.5dvh rgba(109, 76, 255, 0.16) !important;
+  }
+
+  html.dark body .um-video-page .um-start-button:not(.um-start-button-skip):not(.um-start-button-confirm):hover {
+    box-shadow:
+      inset 0 0 0 var(--um-zoom-hairline) rgba(255, 255, 255, 0.04),
+      0 0 1.8dvh rgba(109, 76, 255, 0.22) !important;
+  }
+
+  html body .um-video-page .um-start-button-skip,
+  html body .um-video-page .um-start-button-confirm,
+  html body .um-video-page .um-flip-button,
+  html body .um-video-page .um-local-video-settings select {
+    border-width: var(--um-zoom-hairline) !important;
+    outline-width: 0 !important;
+  }
+
+  html body .um-video-page .um-video-pane {
+    border-width: 0 !important;
+    outline-width: 0 !important;
+    box-shadow: none !important;
+  }
+
+  html body .um-video-page .um-watermark {
+    filter:
+      drop-shadow(0 var(--um-zoom-shadow-y) var(--um-zoom-shadow-y) rgba(0, 0, 0, 0.45)) !important;
+  }
+
+  html body .um-video-page .um-loading {
+    filter:
+      drop-shadow(0 var(--um-zoom-shadow-y) calc(var(--um-zoom-shadow-blur) * 0.66) rgba(0, 0, 0, 0.2)) !important;
+  }
+
+  html body .um-video-page .um-chat-panel::-webkit-scrollbar,
+  html body .um-video-page .um-message-input::-webkit-scrollbar {
+    width: var(--um-zoom-scrollbar) !important;
+  }
+
+  html body .um-video-page .um-chat-panel::-webkit-scrollbar-thumb,
+  html body .um-video-page .um-message-input::-webkit-scrollbar-thumb {
+    border-width: var(--um-zoom-scrollbar-pad) !important;
+  }
+}
