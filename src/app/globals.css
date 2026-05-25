@@ -1695,3 +1695,85 @@ html body .um-video-page .um-chat-panel .um-age-warning span::after {
     line-height: 1.18 !important;
   }
 }
+
+/* Chrome zoom anchoring: keep video overlays scaling from the video box itself. */
+@media (min-width: 901px), (min-width: 600px) and (max-width: 900px) and (hover: hover) and (pointer: fine) {
+  html body .um-video-page .um-video-pane {
+    container-type: inline-size;
+  }
+
+  html body .um-video-page .um-watermark {
+    left: clamp(16px, 3.6cqw, 28px) !important;
+    bottom: clamp(13px, 2.85cqw, 22px) !important;
+    transform-origin: left bottom !important;
+  }
+
+  html body .um-video-page .um-watermark span {
+    font-size: clamp(25px, 5cqw, 39px) !important;
+    line-height: 1 !important;
+  }
+
+  html body .um-video-page .um-watermark small {
+    font-size: clamp(11px, 2.18cqw, 17px) !important;
+    line-height: 1 !important;
+  }
+
+  html body .um-video-page .um-report-button {
+    right: clamp(10px, 2.3cqw, 18px) !important;
+    bottom: clamp(10px, 2.15cqw, 17px) !important;
+    width: clamp(24px, 4.6cqw, 36px) !important;
+    height: clamp(24px, 4.6cqw, 36px) !important;
+    transform-origin: right bottom !important;
+  }
+
+  html body .um-video-page .um-report-button svg {
+    display: block !important;
+    width: 100% !important;
+    height: 100% !important;
+  }
+
+  html body .um-video-page .um-loading {
+    inset: 0 !important;
+    width: clamp(64px, 12cqw, 100px) !important;
+    height: clamp(64px, 12cqw, 100px) !important;
+    border-top-width: clamp(5px, 0.95cqw, 8px) !important;
+    border-right-width: clamp(5px, 0.95cqw, 8px) !important;
+    margin: auto !important;
+    transform-origin: center !important;
+  }
+
+  html body .um-video-page .um-local-video-settings {
+    inset: 0 !important;
+    width: 100% !important;
+    height: 100% !important;
+  }
+
+  html body .um-video-page .um-inner-video-settings {
+    gap: clamp(8px, 1.5cqw, 12px) !important;
+    font-size: clamp(16px, 3cqw, 24px) !important;
+  }
+
+  html body .um-video-page .um-flip-button {
+    width: clamp(126px, 21cqw, 160px) !important;
+    height: clamp(25px, 4cqw, 30px) !important;
+    border-radius: clamp(4px, 0.65cqw, 5px) !important;
+    font-size: clamp(13px, 2.1cqw, 16px) !important;
+  }
+
+  html body .um-video-page .um-local-video-settings select {
+    max-width: clamp(190px, 33cqw, 250px) !important;
+    padding: clamp(4px, 0.75cqw, 5px) !important;
+    border-radius: clamp(4px, 0.65cqw, 5px) !important;
+    font-size: clamp(13px, 1.85cqw, 15px) !important;
+  }
+
+  html body .um-video-page .um-send-button {
+    align-self: center !important;
+    flex: 0 0 auto !important;
+    transform-origin: center !important;
+  }
+
+  html body .um-video-page .um-send-button svg {
+    display: block !important;
+  }
+}
