@@ -2013,3 +2013,142 @@ html body .um-video-page .um-chat-panel .um-age-warning span::after {
     font-size: 1.8dvh !important;
   }
 }
+
+/* Fine-tune overlay pieces inside desktop zoom mode so they travel with the video frame. */
+@media (hover: hover) and (pointer: fine) and (max-width: 1200px) {
+  html body .um-video-page .um-video-pane {
+    container-type: inline-size;
+  }
+
+  html body .um-video-page .um-watermark {
+    left: 1.6dvh !important;
+    bottom: 1.5dvh !important;
+    transform-origin: left bottom !important;
+  }
+
+  html body .um-video-page .um-watermark span {
+    font-size: 3dvh !important;
+    line-height: 1 !important;
+  }
+
+  html body .um-video-page .um-watermark small {
+    margin-left: 0.18dvh !important;
+    font-size: 1.3dvh !important;
+    line-height: 1 !important;
+  }
+
+  html body .um-video-page .um-report-button {
+    right: 1.2dvh !important;
+    bottom: 1.2dvh !important;
+    z-index: 45 !important;
+    display: flex !important;
+    width: 4dvh !important;
+    height: 4dvh !important;
+    align-items: center !important;
+    justify-content: center !important;
+    padding: 0 !important;
+    line-height: 0 !important;
+    transform-origin: right bottom !important;
+  }
+
+  html body .um-video-page .um-report-button svg {
+    width: 4dvh !important;
+    height: 4dvh !important;
+    display: block !important;
+  }
+
+  html body .um-video-page .um-loading {
+    width: 10dvh !important;
+    height: 10dvh !important;
+    border-top-width: 0.8dvh !important;
+    border-right-width: 0.8dvh !important;
+  }
+
+  html body .um-video-page .um-toggle {
+    width: 5.3dvh !important;
+    height: 2.65dvh !important;
+    padding: 0.21dvh !important;
+    border-radius: 2.65dvh !important;
+  }
+
+  html body .um-video-page .um-toggle-dot {
+    width: 2.22dvh !important;
+    height: 2.22dvh !important;
+  }
+
+  html body .um-video-page .um-toggle-dot-on {
+    transform: translateX(2.65dvh) !important;
+  }
+
+  html body .um-video-page .um-user-count {
+    gap: 0.5dvh !important;
+  }
+
+  html body .um-video-page .um-user-count strong {
+    font-size: 3.45dvh !important;
+  }
+
+  html body .um-video-page .um-user-count span {
+    font-size: 2.35dvh !important;
+  }
+
+  html body .um-video-page .um-local-video-settings {
+    z-index: 60 !important;
+    pointer-events: auto !important;
+  }
+
+  html body .um-video-page .um-inner-video-settings {
+    position: relative !important;
+    z-index: 61 !important;
+    gap: 1.45dvh !important;
+    pointer-events: auto !important;
+  }
+
+  html body .um-video-page .um-flip-button {
+    width: 24dvh !important;
+    min-width: 24dvh !important;
+    height: 4.5dvh !important;
+    min-height: 4.5dvh !important;
+    padding: 0 1.2dvh !important;
+    border-radius: 0.75dvh !important;
+    font-size: 1.85dvh !important;
+    line-height: 1 !important;
+    pointer-events: auto !important;
+  }
+
+  html body .um-video-page .um-local-video-settings select {
+    width: 31dvh !important;
+    max-width: 31dvh !important;
+    height: 4.9dvh !important;
+    min-height: 4.9dvh !important;
+    padding: 0 1.1dvh !important;
+    border-width: 0.18dvh !important;
+    border-radius: 0.75dvh !important;
+    font-size: 1.65dvh !important;
+    line-height: 1.1 !important;
+    pointer-events: auto !important;
+  }
+
+  html body .um-video-page .um-chat-panel .um-age-warning {
+    display: inline-flex !important;
+    width: auto !important;
+    max-width: 100% !important;
+    align-items: center !important;
+    gap: 0.22dvh !important;
+    white-space: nowrap !important;
+  }
+
+  html body .um-video-page .um-chat-panel .um-age-warning span {
+    display: inline-flex !important;
+    flex: 0 0 auto !important;
+    align-items: center !important;
+    justify-content: center !important;
+    margin-right: 0 !important;
+    vertical-align: 0 !important;
+  }
+
+  html body .um-video-page .um-chat-panel .um-age-warning span::before {
+    font-size: 1.5dvh !important;
+    line-height: 1 !important;
+  }
+}
