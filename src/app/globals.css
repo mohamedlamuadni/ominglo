@@ -1631,42 +1631,36 @@ html body .um-video-page .um-send-button:active {
   }
 }
 
-/* Umingle-like rules panel: custom 18+ badge and denser old-school text rhythm. */
+/* Umingle-like rules panel: native 18+ emoji and denser old-school text rhythm. */
 html body .um-video-page .um-chat-panel .um-age-warning span {
   box-sizing: border-box !important;
-  display: inline-flex !important;
-  position: relative !important;
-  width: 18px !important;
-  min-width: 18px !important;
-  height: 18px !important;
-  align-items: center !important;
-  justify-content: center !important;
-  margin-right: 3px !important;
-  border: 2px solid #ee1414 !important;
-  border-radius: 50% !important;
-  background: #ffffff !important;
-  color: #050505 !important;
-  font-family: Arial, Helvetica, sans-serif !important;
-  font-size: 9px !important;
-  font-weight: 800 !important;
+  display: inline-block !important;
+  width: auto !important;
+  min-width: 0 !important;
+  height: auto !important;
+  margin-right: 2px !important;
+  border: 0 !important;
+  border-radius: 0 !important;
+  background: transparent !important;
+  color: inherit !important;
+  font-size: 0 !important;
+  font-weight: inherit !important;
   line-height: 1 !important;
-  overflow: hidden !important;
+  overflow: visible !important;
   text-shadow: none !important;
   vertical-align: -2px !important;
 }
 
+html body .um-video-page .um-chat-panel .um-age-warning span::before {
+  content: "🔞" !important;
+  display: inline-block !important;
+  font-size: 16px !important;
+  line-height: 1 !important;
+}
+
 html body .um-video-page .um-chat-panel .um-age-warning span::after {
-  content: "" !important;
-  position: absolute !important;
-  left: -2px !important;
-  top: 7px !important;
-  width: 22px !important;
-  height: 2px !important;
-  border-radius: 999px !important;
-  background: #ee1414 !important;
-  transform: rotate(45deg) !important;
-  transform-origin: center !important;
-  pointer-events: none !important;
+  content: none !important;
+  display: none !important;
 }
 
 @media (min-width: 901px) {
