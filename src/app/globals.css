@@ -2256,3 +2256,103 @@ html body .um-video-page .um-chat-panel .um-age-warning span::after {
     border-width: var(--um-zoom-scrollbar-pad) !important;
   }
 }
+
+/* Slim the desktop bottom controls as one proportional bar. */
+@media (min-width: 901px) {
+  html body .um-video-page {
+    --button-size: 88px !important;
+  }
+
+  html body .um-video-page .um-bottom-bar {
+    flex: 0 0 var(--button-size) !important;
+    height: var(--button-size) !important;
+    align-items: stretch !important;
+  }
+
+  html body .um-video-page .um-start-button {
+    width: 138px !important;
+    min-width: 138px !important;
+    height: 100% !important;
+  }
+
+  html body .um-video-page .um-start-main {
+    font-size: 27px !important;
+  }
+
+  html body .um-video-page .um-start-sub {
+    margin-top: 2px !important;
+    font-size: 15px !important;
+  }
+
+  html body .um-video-page .um-stop-button,
+  html body .um-video-page .um-stop-button-mobile-touch {
+    width: 96px !important;
+    min-width: 96px !important;
+    height: 100% !important;
+    font-size: 19px !important;
+  }
+
+  html body .um-video-page .um-input-box {
+    height: 100% !important;
+    padding: 0 16px 0 24px !important;
+  }
+
+  html body .um-video-page .um-message-input {
+    font-size: 19px !important;
+  }
+
+  html body .um-video-page .um-send-button {
+    width: 50px !important;
+    height: 50px !important;
+  }
+
+  html body .um-video-page .um-send-button svg {
+    width: 34px !important;
+    height: 34px !important;
+  }
+}
+
+@media (hover: hover) and (pointer: fine) and (max-width: 1200px) {
+  html body .um-video-page {
+    --button-size: 10dvh !important;
+  }
+
+  html body .um-video-page .um-start-button {
+    width: 15dvh !important;
+    min-width: 15dvh !important;
+  }
+
+  html body .um-video-page .um-start-main {
+    font-size: 2.75dvh !important;
+  }
+
+  html body .um-video-page .um-start-sub {
+    margin-top: 0.2dvh !important;
+    font-size: 1.5dvh !important;
+  }
+
+  html body .um-video-page .um-stop-button,
+  html body .um-video-page .um-stop-button-mobile-touch {
+    width: 10dvh !important;
+    min-width: 10dvh !important;
+    font-size: 1.85dvh !important;
+  }
+
+  html body .um-video-page .um-input-box {
+    padding: 0 1.25dvh 0 2.2dvh !important;
+  }
+
+  html body .um-video-page .um-message-input {
+    font-size: 1.9dvh !important;
+  }
+
+  html body .um-video-page .um-send-button {
+    width: 3.4dvh !important;
+    height: 3.4dvh !important;
+  }
+
+  html body .um-video-page .um-send-button svg {
+    width: 2.45dvh !important;
+    height: 2.45dvh !important;
+  }
+}
