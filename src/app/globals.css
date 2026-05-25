@@ -2432,3 +2432,58 @@ html body .um-video-page .um-chat-panel .um-age-warning span::after {
     background-image: url("data:image/svg+xml,%3Csvg%20viewBox%3D%270%200%2024%2024%27%20xmlns%3D%27http%3A//www.w3.org/2000/svg%27%20fill%3D%27none%27%20stroke%3D%27%23ffffff%27%20stroke-width%3D%272.2%27%20stroke-linecap%3D%27round%27%20stroke-linejoin%3D%27round%27%3E%3Cpath%20d%3D%27M6%209l6%206%206-6%27/%3E%3C/svg%3E") !important;
   }
 }
+
+/* Match Umingle's compact send chevron and keep it centered inside the input. */
+@media (min-width: 901px) {
+  html body .um-video-page .um-send-button {
+    position: relative !important;
+    display: flex !important;
+    flex: 0 0 36px !important;
+    width: 36px !important;
+    height: 100% !important;
+    align-self: stretch !important;
+    align-items: center !important;
+    justify-content: center !important;
+    padding: 0 !important;
+    line-height: 0 !important;
+    transform: none !important;
+  }
+
+  html body .um-video-page .um-send-button svg {
+    display: none !important;
+  }
+
+  html body .um-video-page .um-send-button::before {
+    content: "" !important;
+    box-sizing: border-box !important;
+    display: block !important;
+    width: 14px !important;
+    height: 14px !important;
+    border-color: currentColor !important;
+    border-style: solid !important;
+    border-width: 0 4px 4px 0 !important;
+    border-radius: 1px !important;
+    transform: rotate(-45deg) !important;
+    transform-origin: center !important;
+  }
+}
+
+@media (hover: hover) and (pointer: fine) and (max-width: 1200px) {
+  html body .um-video-page .um-send-button {
+    flex-basis: 3.1dvh !important;
+    width: 3.1dvh !important;
+    height: 100% !important;
+    align-self: stretch !important;
+    align-items: center !important;
+    justify-content: center !important;
+    padding: 0 !important;
+    transform: none !important;
+  }
+
+  html body .um-video-page .um-send-button::before {
+    width: 1.25dvh !important;
+    height: 1.25dvh !important;
+    border-width: 0 0.32dvh 0.32dvh 0 !important;
+    border-radius: 0.08dvh !important;
+  }
+}
