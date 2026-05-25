@@ -1564,3 +1564,69 @@ html body .um-video-page.um-mobile-touch .um-input-box {
     height: 38px !important;
   }
 }
+
+/* Final Umingle-style detail polish: icon weight, dark Start state, and video watermark. */
+html.dark body .um-video-page .um-start-button:not(.um-start-button-skip):not(.um-start-button-confirm) {
+  background: #090711 !important;
+  border: 1px solid rgba(109, 76, 255, 0.62) !important;
+  color: #ffffff !important;
+  box-shadow:
+    inset 0 0 0 1px rgba(255, 255, 255, 0.025),
+    0 0 14px rgba(109, 76, 255, 0.16) !important;
+}
+
+html.dark body .um-video-page .um-start-button:not(.um-start-button-skip):not(.um-start-button-confirm):hover {
+  background: #0d0a19 !important;
+  border-color: rgba(132, 102, 255, 0.82) !important;
+  box-shadow:
+    inset 0 0 0 1px rgba(255, 255, 255, 0.04),
+    0 0 18px rgba(109, 76, 255, 0.22) !important;
+}
+
+html.dark body .um-video-page .um-start-button:not(.um-start-button-skip):not(.um-start-button-confirm) .um-start-sub {
+  color: #b9a8ff !important;
+}
+
+html body .um-video-page .um-send-button {
+  color: #9ca3af !important;
+  transition: color 0.16s ease, transform 0.16s ease !important;
+}
+
+html body .um-video-page .um-send-button:hover {
+  color: #b7beca !important;
+}
+
+html body .um-video-page .um-send-button:active {
+  transform: translateY(1px) !important;
+}
+
+@media (min-width: 901px) {
+  html body .um-video-page .um-input-box {
+    padding-right: 14px !important;
+  }
+
+  html body .um-video-page .um-send-button {
+    width: 40px !important;
+    height: 40px !important;
+  }
+
+  html body .um-video-page .um-send-button svg {
+    width: 26px !important;
+    height: 26px !important;
+  }
+
+  html body .um-video-page .um-watermark {
+    left: 28px !important;
+    bottom: 22px !important;
+    opacity: 0.96 !important;
+  }
+
+  html body .um-video-page .um-watermark span {
+    font-size: 39px !important;
+  }
+
+  html body .um-video-page .um-watermark small {
+    font-size: 17px !important;
+    margin-left: 1px !important;
+  }
+}
