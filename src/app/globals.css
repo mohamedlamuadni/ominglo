@@ -1402,7 +1402,7 @@ html body .um-video-page.um-mobile-touch .um-input-box {
     --um-frame-width: min(1720px, 96vw, calc((100dvh - 270px) * 2.6667 + 6px)) !important;
     --header-height: 64px !important;
     --page-gap: 6px !important;
-    --button-size: 104px !important;
+    --button-size: 96px !important;
     overflow-y: auto !important;
   }
 
@@ -1447,10 +1447,10 @@ html body .um-video-page.um-mobile-touch .um-input-box {
   }
 
   html body .um-video-page .um-chat-panel {
-    flex-basis: 136px !important;
-    height: 136px !important;
-    min-height: 136px !important;
-    max-height: 136px !important;
+    flex-basis: 118px !important;
+    height: 118px !important;
+    min-height: 118px !important;
+    max-height: 118px !important;
     padding: 14px 14px !important;
     border-radius: 8px !important;
   }
@@ -1479,22 +1479,33 @@ html body .um-video-page.um-mobile-touch .um-input-box {
   }
 
   html body .um-video-page .um-bottom-bar {
+    align-items: stretch !important;
     flex-basis: var(--button-size) !important;
     height: var(--button-size) !important;
     gap: 8px !important;
   }
 
   html body .um-video-page .um-start-button {
-    width: 172px !important;
+    display: flex !important;
+    width: 150px !important;
+    height: 100% !important;
+    align-items: center !important;
+    justify-content: center !important;
+    flex-direction: column !important;
     border-radius: 8px !important;
+    padding: 0 !important;
+    line-height: 1 !important;
   }
 
   html body .um-video-page .um-start-main {
-    font-size: 31px !important;
+    font-size: 29px !important;
+    line-height: 1 !important;
   }
 
   html body .um-video-page .um-start-sub {
-    font-size: 18px !important;
+    margin-top: 3px !important;
+    font-size: 16px !important;
+    line-height: 1 !important;
   }
 
   html body .um-video-page .um-stop-button {
@@ -1504,6 +1515,8 @@ html body .um-video-page.um-mobile-touch .um-input-box {
   }
 
   html body .um-video-page .um-input-box {
+    height: 100% !important;
+    align-items: center !important;
     border-radius: 8px !important;
     padding: 0 18px 0 26px !important;
   }
