@@ -2356,3 +2356,79 @@ html body .um-video-page .um-chat-panel .um-age-warning span::after {
     height: 2.45dvh !important;
   }
 }
+
+/* Keep small desktop UI details locked together under extreme Chrome zoom. */
+@media (hover: hover) and (pointer: fine) and (max-width: 1200px) {
+  html body .um-video-page .um-header-right {
+    flex: 0 0 auto !important;
+    min-width: max-content !important;
+    white-space: nowrap !important;
+    overflow: visible !important;
+  }
+
+  html body .um-video-page .um-user-count {
+    display: inline-flex !important;
+    flex: 0 0 auto !important;
+    min-width: max-content !important;
+    align-items: baseline !important;
+    gap: 0.45dvh !important;
+    white-space: nowrap !important;
+    overflow: visible !important;
+  }
+
+  html body .um-video-page .um-user-count strong,
+  html body .um-video-page .um-user-count span {
+    display: inline-block !important;
+    flex: 0 0 auto !important;
+    white-space: nowrap !important;
+  }
+
+  html body .um-video-page .um-input-box {
+    align-items: stretch !important;
+  }
+
+  html body .um-video-page .um-message-input {
+    box-sizing: border-box !important;
+    display: block !important;
+    align-self: stretch !important;
+    height: 100% !important;
+    margin: 0 !important;
+    padding: 0.55dvh 0.45dvh !important;
+    line-height: 1.35 !important;
+    text-align: left !important;
+    transform: none !important;
+  }
+
+  html body .um-video-page .um-message-input::placeholder {
+    line-height: inherit !important;
+  }
+
+  html body .um-video-page .um-inner-video-settings {
+    gap: 1.25dvh !important;
+    line-height: 1 !important;
+  }
+
+  html body .um-video-page .um-flip-button {
+    box-sizing: border-box !important;
+    font-size: 1.65dvh !important;
+    line-height: 1 !important;
+    white-space: nowrap !important;
+  }
+
+  html body .um-video-page .um-local-video-settings select {
+    box-sizing: border-box !important;
+    appearance: none !important;
+    -webkit-appearance: none !important;
+    padding: 0 3.2dvh 0 1.1dvh !important;
+    font-size: 1.5dvh !important;
+    line-height: 1 !important;
+    background-image: url("data:image/svg+xml,%3Csvg%20viewBox%3D%270%200%2024%2024%27%20xmlns%3D%27http%3A//www.w3.org/2000/svg%27%20fill%3D%27none%27%20stroke%3D%27%23111111%27%20stroke-width%3D%272.2%27%20stroke-linecap%3D%27round%27%20stroke-linejoin%3D%27round%27%3E%3Cpath%20d%3D%27M6%209l6%206%206-6%27/%3E%3C/svg%3E") !important;
+    background-repeat: no-repeat !important;
+    background-position: right 0.95dvh center !important;
+    background-size: 2.05dvh 2.05dvh !important;
+  }
+
+  html.dark body .um-video-page .um-local-video-settings select {
+    background-image: url("data:image/svg+xml,%3Csvg%20viewBox%3D%270%200%2024%2024%27%20xmlns%3D%27http%3A//www.w3.org/2000/svg%27%20fill%3D%27none%27%20stroke%3D%27%23ffffff%27%20stroke-width%3D%272.2%27%20stroke-linecap%3D%27round%27%20stroke-linejoin%3D%27round%27%3E%3Cpath%20d%3D%27M6%209l6%206%206-6%27/%3E%3C/svg%3E") !important;
+  }
+}
