@@ -1399,10 +1399,11 @@ html body .um-video-page.um-mobile-touch .um-input-box {
 /* Desktop density pass: keep the design, but let it fill the page like the Umingle reference. */
 @media (min-width: 901px) {
   html body .um-video-page {
-    --um-frame-width: min(1536px, 92vw, calc((100dvh - 330px) * 2.6667 + 8px)) !important;
-    --header-height: 74px !important;
-    --page-gap: 8px !important;
+    --um-frame-width: min(1720px, 96vw, calc((100dvh - 270px) * 2.6667 + 6px)) !important;
+    --header-height: 64px !important;
+    --page-gap: 6px !important;
     --button-size: 104px !important;
+    overflow-y: auto !important;
   }
 
   html body .um-video-page .um-header,
@@ -1413,7 +1414,7 @@ html body .um-video-page.um-mobile-touch .um-input-box {
 
   html body .um-video-page .um-header {
     height: var(--header-height) !important;
-    padding: 7px 4px 6px !important;
+    padding: 3px 2px 4px !important;
   }
 
   html body .um-video-page .um-logo {
@@ -1426,7 +1427,7 @@ html body .um-video-page.um-mobile-touch .um-input-box {
   }
 
   html body .um-video-page .um-main {
-    padding-bottom: 10px !important;
+    padding-bottom: 6px !important;
     gap: var(--page-gap) !important;
   }
 
@@ -1438,7 +1439,7 @@ html body .um-video-page.um-mobile-touch .um-input-box {
     flex-basis: calc((100% - var(--page-gap)) / 2) !important;
     width: calc((100% - var(--page-gap)) / 2) !important;
     max-width: calc((100% - var(--page-gap)) / 2) !important;
-    border-radius: 10px !important;
+    border-radius: 9px !important;
   }
 
   html body .um-video-page .um-right-box {
@@ -1446,16 +1447,16 @@ html body .um-video-page.um-mobile-touch .um-input-box {
   }
 
   html body .um-video-page .um-chat-panel {
-    flex-basis: 126px !important;
-    height: 126px !important;
-    min-height: 126px !important;
-    max-height: 126px !important;
-    padding: 13px 12px !important;
+    flex-basis: 136px !important;
+    height: 136px !important;
+    min-height: 136px !important;
+    max-height: 136px !important;
+    padding: 14px 14px !important;
     border-radius: 8px !important;
   }
 
   html body .um-video-page .um-welcome h1 {
-    font-size: 24px !important;
+    font-size: 27px !important;
     margin-bottom: 7px !important;
   }
 
@@ -1465,35 +1466,35 @@ html body .um-video-page.um-mobile-touch .um-input-box {
   html body .um-video-page .um-searching,
   html body .um-video-page .um-connected-message,
   html body .um-video-page .um-messages {
-    font-size: 14px !important;
+    font-size: 16px !important;
     line-height: 1.35 !important;
   }
 
   html body .um-video-page .um-age-warning span {
-    width: 20px !important;
-    height: 20px !important;
-    min-width: 20px !important;
-    font-size: 10px !important;
+    width: 22px !important;
+    height: 22px !important;
+    min-width: 22px !important;
+    font-size: 11px !important;
     vertical-align: -2px !important;
   }
 
   html body .um-video-page .um-bottom-bar {
     flex-basis: var(--button-size) !important;
     height: var(--button-size) !important;
-    gap: 10px !important;
+    gap: 8px !important;
   }
 
   html body .um-video-page .um-start-button {
-    width: 158px !important;
+    width: 172px !important;
     border-radius: 8px !important;
   }
 
   html body .um-video-page .um-start-main {
-    font-size: 29px !important;
+    font-size: 31px !important;
   }
 
   html body .um-video-page .um-start-sub {
-    font-size: 17px !important;
+    font-size: 18px !important;
   }
 
   html body .um-video-page .um-stop-button {
@@ -1504,24 +1505,24 @@ html body .um-video-page.um-mobile-touch .um-input-box {
 
   html body .um-video-page .um-input-box {
     border-radius: 8px !important;
-    padding: 0 20px 0 24px !important;
+    padding: 0 18px 0 26px !important;
   }
 
   html body .um-video-page .um-message-input {
-    font-size: 18px !important;
+    font-size: 20px !important;
   }
 
   html body .um-video-page .um-watermark {
-    left: 28px !important;
-    bottom: 23px !important;
+    left: 32px !important;
+    bottom: 26px !important;
   }
 
   html body .um-video-page .um-watermark span {
-    font-size: 38px !important;
+    font-size: 45px !important;
   }
 
   html body .um-video-page .um-watermark small {
-    font-size: 17px !important;
+    font-size: 20px !important;
   }
 
   html body .um-video-page .um-report-button {
