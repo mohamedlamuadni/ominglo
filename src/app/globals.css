@@ -2152,3 +2152,33 @@ html body .um-video-page .um-chat-panel .um-age-warning span::after {
     line-height: 1 !important;
   }
 }
+
+/* Keep the Start/Esc label stack intact when desktop Chrome zoom reaches tiny CSS viewports. */
+@media (hover: hover) and (pointer: fine) and (max-width: 1200px) {
+  html body .um-video-page .um-start-button {
+    box-sizing: border-box !important;
+    display: flex !important;
+    flex-direction: column !important;
+    align-items: center !important;
+    justify-content: center !important;
+    gap: 0.28dvh !important;
+    overflow: visible !important;
+    padding: 0.85dvh 0 !important;
+    line-height: 1 !important;
+  }
+
+  html body .um-video-page .um-start-main,
+  html body .um-video-page .um-start-sub {
+    display: block !important;
+    flex: 0 0 auto !important;
+    min-height: 0 !important;
+    max-height: none !important;
+    white-space: nowrap !important;
+    line-height: 1 !important;
+  }
+
+  html body .um-video-page .um-start-sub {
+    margin-top: 0 !important;
+    font-size: 1.65dvh !important;
+  }
+}

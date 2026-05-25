@@ -22,7 +22,32 @@ export default function RootLayout({ children }) {
       lang="en"
       className={`${geistSans.variable} ${geistMono.variable} h-full antialiased`}
     >
-      <body className="min-h-full flex flex-col">{children}</body>
+      <body className="min-h-full flex flex-col">
+        {children}
+        <script
+          dangerouslySetInnerHTML={{
+            __html: `
+(() => {
+  if (window.__omingloEscapeShortcut) return;
+  window.__omingloEscapeShortcut = true;
+
+  document.addEventListener("keydown", (event) => {
+    if (event.key !== "Escape" || event.repeat || event.defaultPrevented) return;
+    if (event.altKey || event.ctrlKey || event.metaKey) return;
+    if (!document.querySelector(".um-video-page")) return;
+    if (event.target instanceof HTMLSelectElement) return;
+
+    const control = document.querySelector(".um-video-page .um-start-button");
+    if (!(control instanceof HTMLButtonElement) || control.disabled) return;
+
+    event.preventDefault();
+    control.click();
+  }, true);
+})();
+            `.trim(),
+          }}
+        />
+      </body>
     </html>
   );
 }
