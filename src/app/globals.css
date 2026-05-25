@@ -1777,3 +1777,239 @@ html body .um-video-page .um-chat-panel .um-age-warning span::after {
     display: block !important;
   }
 }
+
+/*
+  Desktop browser-zoom mode.
+  Chrome zoom reduces the CSS viewport, which can accidentally trigger phone rules on
+  desktop. For fine-pointer devices, keep Umingle's vh-based proportions so 200%,
+  300%, and 500% zoom still feel anchored to the original desktop composition.
+*/
+@media (hover: hover) and (pointer: fine) and (max-width: 1200px) {
+  html body .um-video-page {
+    --header-height: 8dvh !important;
+    --page-pad: 1.5dvh !important;
+    --top-pad: 0.25dvh !important;
+    --page-gap: 1dvh !important;
+    --button-size: 11dvh !important;
+    --um-zoom-frame-width: min(173.333dvh, calc(100dvw - var(--page-pad) - var(--page-pad))) !important;
+    min-width: 0 !important;
+    overflow: hidden !important;
+  }
+
+  html body .um-video-page .um-shell {
+    height: 100dvh !important;
+    overflow: hidden !important;
+  }
+
+  html body .um-video-page .um-header,
+  html body .um-video-page .um-main {
+    width: var(--um-zoom-frame-width) !important;
+    max-width: var(--um-zoom-frame-width) !important;
+    margin-right: auto !important;
+    margin-left: auto !important;
+  }
+
+  html body .um-video-page .um-header {
+    height: var(--header-height) !important;
+    min-height: var(--header-height) !important;
+    padding: 0.85dvh !important;
+  }
+
+  html body .um-video-page .um-logo {
+    width: 13.5dvh !important;
+    height: auto !important;
+    max-height: 5.6dvh !important;
+  }
+
+  html body .um-video-page .um-header-right {
+    gap: 1.2dvh !important;
+  }
+
+  html body .um-video-page .um-toggle {
+    width: 5.3dvh !important;
+    height: 2.65dvh !important;
+    border-radius: 2.65dvh !important;
+  }
+
+  html body .um-video-page .um-toggle-dot {
+    width: 2.22dvh !important;
+    height: 2.22dvh !important;
+    transform: translateX(0) !important;
+  }
+
+  html body .um-video-page .um-toggle-dot-on {
+    transform: translateX(2.65dvh) !important;
+  }
+
+  html body .um-video-page .um-user-count strong {
+    font-size: 3.45dvh !important;
+    line-height: 1 !important;
+  }
+
+  html body .um-video-page .um-user-count span {
+    font-size: 2.35dvh !important;
+    line-height: 1 !important;
+  }
+
+  html body .um-video-page .um-main {
+    flex: 1 1 auto !important;
+    min-height: 0 !important;
+    display: flex !important;
+    flex-direction: column !important;
+    padding: var(--top-pad) var(--page-pad) var(--page-pad) !important;
+    gap: var(--page-gap) !important;
+  }
+
+  html body .um-video-page .um-video-grid {
+    display: flex !important;
+    position: relative !important;
+    flex: 0 0 auto !important;
+    flex-direction: row !important;
+    width: 100% !important;
+    gap: var(--page-gap) !important;
+    justify-content: center !important;
+  }
+
+  html body .um-video-page .um-video-pane,
+  html body .um-video-page .um-video-pane.remote,
+  html body .um-video-page .um-video-pane.local {
+    position: relative !important;
+    inset: auto !important;
+    z-index: auto !important;
+    flex: 0 0 calc(50% - 0.5dvh) !important;
+    width: calc(50% - 0.5dvh) !important;
+    max-width: calc(50% - 0.5dvh) !important;
+    height: auto !important;
+    max-height: 65dvh !important;
+    aspect-ratio: 4 / 3 !important;
+    border-radius: 1dvh !important;
+  }
+
+  html body .um-video-page .um-right-box {
+    flex: 0 0 auto !important;
+    min-height: 0 !important;
+    gap: var(--page-gap) !important;
+  }
+
+  html body .um-video-page .um-chat-panel {
+    flex: 0 0 10.5dvh !important;
+    height: 10.5dvh !important;
+    min-height: 10.5dvh !important;
+    max-height: 10.5dvh !important;
+    padding: 0.72dvh 1.05dvh !important;
+    border-radius: 0.9dvh !important;
+  }
+
+  html body .um-video-page .um-chat-panel .um-welcome,
+  html body .um-video-page .um-chat-panel .um-age-warning,
+  html body .um-video-page .um-chat-panel .um-welcome p,
+  html body .um-video-page .um-searching,
+  html body .um-video-page .um-connected-message,
+  html body .um-video-page .um-messages {
+    font-size: 1.28dvh !important;
+    line-height: 1.18 !important;
+  }
+
+  html body .um-video-page .um-chat-panel .um-welcome h1 {
+    margin: 0 0 0.32dvh !important;
+    font-size: 2.08dvh !important;
+    line-height: 1.08 !important;
+  }
+
+  html body .um-video-page .um-chat-panel .um-age-warning {
+    margin: 0 0 0.22dvh !important;
+  }
+
+  html body .um-video-page .um-chat-panel .um-age-warning span::before {
+    font-size: 1.5dvh !important;
+  }
+
+  html body .um-video-page .um-bottom-bar {
+    flex: 0 0 var(--button-size) !important;
+    height: var(--button-size) !important;
+    gap: var(--page-gap) !important;
+  }
+
+  html body .um-video-page .um-start-button {
+    width: 16.5dvh !important;
+    min-width: 16.5dvh !important;
+    height: 100% !important;
+    border-radius: 0.9dvh !important;
+  }
+
+  html body .um-video-page .um-start-main {
+    font-size: 3dvh !important;
+    line-height: 1 !important;
+  }
+
+  html body .um-video-page .um-start-sub {
+    margin-top: 0.25dvh !important;
+    font-size: 1.65dvh !important;
+    line-height: 1 !important;
+  }
+
+  html body .um-video-page .um-stop-button,
+  html body .um-video-page .um-stop-button-mobile-touch {
+    width: 11dvh !important;
+    min-width: 11dvh !important;
+    height: 100% !important;
+    border-radius: 0.9dvh !important;
+    font-size: 2dvh !important;
+  }
+
+  html body .um-video-page .um-input-box {
+    min-width: 0 !important;
+    height: 100% !important;
+    padding: 0 1.4dvh 0 2.4dvh !important;
+    border-radius: 0.9dvh !important;
+  }
+
+  html body .um-video-page .um-message-input {
+    font-size: 2.05dvh !important;
+    line-height: 1.25 !important;
+  }
+
+  html body .um-video-page .um-send-button {
+    width: 3.7dvh !important;
+    height: 3.7dvh !important;
+  }
+
+  html body .um-video-page .um-send-button svg {
+    width: 2.7dvh !important;
+    height: 2.7dvh !important;
+  }
+
+  html body .um-video-page .um-local-video-settings {
+    inset: 0 !important;
+    width: 100% !important;
+    height: 100% !important;
+    pointer-events: auto !important;
+  }
+
+  html body .um-video-page .um-video-pane.local:hover .um-local-video-settings {
+    display: flex !important;
+  }
+
+  html body .um-video-page .um-video-pane.local:not(:hover) .um-local-video-settings {
+    display: none !important;
+  }
+
+  html body .um-video-page .um-inner-video-settings {
+    gap: 1.5dvh !important;
+    font-size: 3dvh !important;
+  }
+
+  html body .um-video-page .um-flip-button {
+    width: 25dvh !important;
+    height: 4.5dvh !important;
+    border-radius: 0.8dvh !important;
+    font-size: 2dvh !important;
+  }
+
+  html body .um-video-page .um-local-video-settings select {
+    max-width: 35dvh !important;
+    padding: 0.8dvh !important;
+    border-radius: 0.8dvh !important;
+    font-size: 1.8dvh !important;
+  }
+}
