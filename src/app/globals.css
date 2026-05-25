@@ -1447,17 +1447,17 @@ html body .um-video-page.um-mobile-touch .um-input-box {
   }
 
   html body .um-video-page .um-chat-panel {
-    flex-basis: 118px !important;
-    height: 118px !important;
-    min-height: 118px !important;
-    max-height: 118px !important;
-    padding: 14px 14px !important;
+    flex-basis: 92px !important;
+    height: 92px !important;
+    min-height: 92px !important;
+    max-height: 92px !important;
+    padding: 8px 12px !important;
     border-radius: 8px !important;
   }
 
   html body .um-video-page .um-welcome h1 {
-    font-size: 27px !important;
-    margin-bottom: 7px !important;
+    font-size: 22px !important;
+    margin-bottom: 4px !important;
   }
 
   html body .um-video-page .um-welcome,
@@ -1466,16 +1466,20 @@ html body .um-video-page.um-mobile-touch .um-input-box {
   html body .um-video-page .um-searching,
   html body .um-video-page .um-connected-message,
   html body .um-video-page .um-messages {
-    font-size: 16px !important;
-    line-height: 1.35 !important;
+    font-size: 14px !important;
+    line-height: 1.25 !important;
   }
 
   html body .um-video-page .um-age-warning span {
-    width: 22px !important;
-    height: 22px !important;
-    min-width: 22px !important;
-    font-size: 11px !important;
-    vertical-align: -2px !important;
+    width: 19px !important;
+    height: 19px !important;
+    min-width: 19px !important;
+    font-size: 10px !important;
+    vertical-align: -1px !important;
+  }
+
+  html body .um-video-page .um-welcome p {
+    margin: 0 !important;
   }
 
   html body .um-video-page .um-bottom-bar {
