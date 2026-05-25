@@ -1395,3 +1395,154 @@ html body .um-video-page.um-mobile-touch .um-input-box {
     min-width: 0 !important;
   }
 }
+
+/* Desktop density pass: keep the design, but let it fill the page like the Umingle reference. */
+@media (min-width: 901px) {
+  html body .um-video-page {
+    --um-frame-width: min(1536px, 92vw, calc((100dvh - 330px) * 2.6667 + 8px)) !important;
+    --header-height: 74px !important;
+    --page-gap: 8px !important;
+    --button-size: 104px !important;
+  }
+
+  html body .um-video-page .um-header,
+  html body .um-video-page .um-main {
+    width: var(--um-frame-width) !important;
+    max-width: var(--um-frame-width) !important;
+  }
+
+  html body .um-video-page .um-header {
+    height: var(--header-height) !important;
+    padding: 7px 4px 6px !important;
+  }
+
+  html body .um-video-page .um-logo {
+    height: 57px !important;
+    max-height: 57px !important;
+  }
+
+  html body .um-video-page .um-header-right {
+    gap: 12px !important;
+  }
+
+  html body .um-video-page .um-main {
+    padding-bottom: 10px !important;
+    gap: var(--page-gap) !important;
+  }
+
+  html body .um-video-page .um-video-grid {
+    gap: var(--page-gap) !important;
+  }
+
+  html body .um-video-page .um-video-pane {
+    flex-basis: calc((100% - var(--page-gap)) / 2) !important;
+    width: calc((100% - var(--page-gap)) / 2) !important;
+    max-width: calc((100% - var(--page-gap)) / 2) !important;
+    border-radius: 10px !important;
+  }
+
+  html body .um-video-page .um-right-box {
+    gap: var(--page-gap) !important;
+  }
+
+  html body .um-video-page .um-chat-panel {
+    flex-basis: 126px !important;
+    height: 126px !important;
+    min-height: 126px !important;
+    max-height: 126px !important;
+    padding: 13px 12px !important;
+    border-radius: 8px !important;
+  }
+
+  html body .um-video-page .um-welcome h1 {
+    font-size: 24px !important;
+    margin-bottom: 7px !important;
+  }
+
+  html body .um-video-page .um-welcome,
+  html body .um-video-page .um-age-warning,
+  html body .um-video-page .um-welcome p,
+  html body .um-video-page .um-searching,
+  html body .um-video-page .um-connected-message,
+  html body .um-video-page .um-messages {
+    font-size: 14px !important;
+    line-height: 1.35 !important;
+  }
+
+  html body .um-video-page .um-age-warning span {
+    width: 20px !important;
+    height: 20px !important;
+    min-width: 20px !important;
+    font-size: 10px !important;
+    vertical-align: -2px !important;
+  }
+
+  html body .um-video-page .um-bottom-bar {
+    flex-basis: var(--button-size) !important;
+    height: var(--button-size) !important;
+    gap: 10px !important;
+  }
+
+  html body .um-video-page .um-start-button {
+    width: 158px !important;
+    border-radius: 8px !important;
+  }
+
+  html body .um-video-page .um-start-main {
+    font-size: 29px !important;
+  }
+
+  html body .um-video-page .um-start-sub {
+    font-size: 17px !important;
+  }
+
+  html body .um-video-page .um-stop-button {
+    width: 104px !important;
+    border-radius: 8px !important;
+    font-size: 20px !important;
+  }
+
+  html body .um-video-page .um-input-box {
+    border-radius: 8px !important;
+    padding: 0 20px 0 24px !important;
+  }
+
+  html body .um-video-page .um-message-input {
+    font-size: 18px !important;
+  }
+
+  html body .um-video-page .um-watermark {
+    left: 28px !important;
+    bottom: 23px !important;
+  }
+
+  html body .um-video-page .um-watermark span {
+    font-size: 38px !important;
+  }
+
+  html body .um-video-page .um-watermark small {
+    font-size: 17px !important;
+  }
+
+  html body .um-video-page .um-report-button {
+    right: 18px !important;
+    bottom: 17px !important;
+    width: 36px !important;
+    height: 36px !important;
+  }
+
+  html body .um-video-page .um-report-button svg {
+    width: 36px !important;
+    height: 36px !important;
+  }
+
+  html body .um-video-page .um-send-button {
+    width: 54px !important;
+    height: 54px !important;
+  }
+
+  html body .um-video-page .um-send-button svg {
+    width: 38px !important;
+    height: 38px !important;
+  }
+}
