@@ -2454,15 +2454,21 @@ html body .um-video-page .um-chat-panel .um-age-warning span::after {
   }
 
   html body .um-video-page .um-send-button::before {
-    content: "" !important;
+    content: ">" !important;
     display: block !important;
-    width: 22px !important;
-    height: 22px !important;
+    width: auto !important;
+    height: auto !important;
     flex: 0 0 auto !important;
-    background-color: currentColor !important;
-    transform: none !important;
-    -webkit-mask: url("data:image/svg+xml,%3Csvg%20viewBox%3D%270%200%2030%2030%27%20xmlns%3D%27http%3A//www.w3.org/2000/svg%27%20fill%3D%27none%27%3E%3Cpath%20d%3D%27M9%206L22%2015L9%2024%27%20stroke%3D%27black%27%20stroke-width%3D%274.4%27%20stroke-linecap%3D%27butt%27%20stroke-linejoin%3D%27miter%27/%3E%3C/svg%3E") center / contain no-repeat !important;
-    mask: url("data:image/svg+xml,%3Csvg%20viewBox%3D%270%200%2030%2030%27%20xmlns%3D%27http%3A//www.w3.org/2000/svg%27%20fill%3D%27none%27%3E%3Cpath%20d%3D%27M9%206L22%2015L9%2024%27%20stroke%3D%27black%27%20stroke-width%3D%274.4%27%20stroke-linecap%3D%27butt%27%20stroke-linejoin%3D%27miter%27/%3E%3C/svg%3E") center / contain no-repeat !important;
+    color: currentColor !important;
+    background: transparent !important;
+    font-family: Arial, Helvetica, sans-serif !important;
+    font-size: 28px !important;
+    font-weight: 700 !important;
+    line-height: 1 !important;
+    letter-spacing: 0 !important;
+    transform: translateY(-1px) !important;
+    -webkit-mask: none !important;
+    mask: none !important;
   }
 }
 
@@ -2483,11 +2489,13 @@ html body .um-video-page .um-chat-panel .um-age-warning span::after {
   }
 
   html body .um-video-page .um-send-button::before {
-    content: "" !important;
+    content: ">" !important;
     display: block !important;
-    width: 1.85dvh !important;
-    height: 1.85dvh !important;
+    width: auto !important;
+    height: auto !important;
     flex: 0 0 auto !important;
-    transform: none !important;
+    font-size: 2.35dvh !important;
+    line-height: 1 !important;
+    transform: translateY(-0.08dvh) !important;
   }
 }
