@@ -2433,7 +2433,7 @@ html body .um-video-page .um-chat-panel .um-age-warning span::after {
   }
 }
 
-/* Keep the original send icon sharp, then anchor that same icon under desktop zoom. */
+/* Use a compact Umingle-style send chevron and keep it anchored under desktop zoom. */
 @media (min-width: 901px) {
   html body .um-video-page .um-send-button {
     position: relative !important;
@@ -2450,16 +2450,19 @@ html body .um-video-page .um-chat-panel .um-age-warning span::after {
   }
 
   html body .um-video-page .um-send-button svg {
-    display: block !important;
-    width: 27px !important;
-    height: 27px !important;
-    flex: 0 0 auto !important;
-    transform: none !important;
+    display: none !important;
   }
 
   html body .um-video-page .um-send-button::before {
-    content: none !important;
-    display: none !important;
+    content: "" !important;
+    display: block !important;
+    width: 22px !important;
+    height: 22px !important;
+    flex: 0 0 auto !important;
+    background-color: currentColor !important;
+    transform: none !important;
+    -webkit-mask: url("data:image/svg+xml,%3Csvg%20viewBox%3D%270%200%2030%2030%27%20xmlns%3D%27http%3A//www.w3.org/2000/svg%27%20fill%3D%27none%27%3E%3Cpath%20d%3D%27M9%206L22%2015L9%2024%27%20stroke%3D%27black%27%20stroke-width%3D%274.4%27%20stroke-linecap%3D%27butt%27%20stroke-linejoin%3D%27miter%27/%3E%3C/svg%3E") center / contain no-repeat !important;
+    mask: url("data:image/svg+xml,%3Csvg%20viewBox%3D%270%200%2030%2030%27%20xmlns%3D%27http%3A//www.w3.org/2000/svg%27%20fill%3D%27none%27%3E%3Cpath%20d%3D%27M9%206L22%2015L9%2024%27%20stroke%3D%27black%27%20stroke-width%3D%274.4%27%20stroke-linecap%3D%27butt%27%20stroke-linejoin%3D%27miter%27/%3E%3C/svg%3E") center / contain no-repeat !important;
   }
 }
 
@@ -2476,15 +2479,15 @@ html body .um-video-page .um-chat-panel .um-age-warning span::after {
   }
 
   html body .um-video-page .um-send-button svg {
-    display: block !important;
-    width: 2.25dvh !important;
-    height: 2.25dvh !important;
-    flex: 0 0 auto !important;
-    transform: none !important;
+    display: none !important;
   }
 
   html body .um-video-page .um-send-button::before {
-    content: none !important;
-    display: none !important;
+    content: "" !important;
+    display: block !important;
+    width: 1.85dvh !important;
+    height: 1.85dvh !important;
+    flex: 0 0 auto !important;
+    transform: none !important;
   }
 }
